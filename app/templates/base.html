@@ -1,0 +1,16 @@
+<html>
+	<head>
+		{% if title %}
+		<title>{{title}} - Roll for Initiative</title>
+		{% else %}
+		<title>Welcome to Roll for Initiative</title>
+		{% endif %}
+	</head>
+	<body>
+		<div>Navbar goes here</div>
+		<hr>
+		<!-- new jersey engineering, yo -->
+		{% block content %}
+		{% endblock %}
+	</body>
+</html>

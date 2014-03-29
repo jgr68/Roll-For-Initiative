@@ -1,0 +1,24 @@
+<!-- new jersey engineering, yo -->
+{% extends 'base.html' %}
+{% block content %}
+	<h2>Upcoming Events</h2>
+	<ul>
+	{% for p in upcoming %}
+		<li class="schedule-item">
+		<h4>{{p.heading}}</h4>
+		<b>{{p.date_locale}}</b>
+		<p>{{p.body}}</p>
+		</li>
+	{% endfor %}
+	</ul>
+	<h2>Weekly Events</h2>
+	<ul>
+	{% for p in weekly %}
+		<li class="schedule-item">
+		<h4>{{p.heading}}</h4>
+		<b>{{p.date_locale}}</b>
+		<p>{{p.body}}</p>
+		</li>
+	{% endfor %}
+	</ul>
+{% endblock %}
