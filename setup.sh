@@ -1,12 +1,5 @@
-flask/bin/pip install flask-login
-flask/bin/pip install 
-flask/bin/pip install 
-flask/bin/pip install
-flask/bin/pip install
-flask/bin/pip install
-flask/bin/pip install
-flask/bin/pip install
-flask/bin/pip install
-
-
-
+#!/bin/bash
+while read line
+do
+	flask/bin/pip install "$line"
+done < packages.txt
