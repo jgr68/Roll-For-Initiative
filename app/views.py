@@ -57,7 +57,7 @@ def events():
 
 @app.route('/subscribe')
 def subscribe():
-	return render_template("index.html",
+	return render_template("subscribe.html",
 					title = 'Subscribe',
 					heading = 'We haz a mailing list')
 
