@@ -13,10 +13,10 @@
 		  dictumst. Vivamus a orci at nulla tristique.</p>
 		  <!--/lorem-->
 
-		<!-- <a class="button" href="#">Find out more!</a> -->
 		  <a class="button round" href="#" data-reveal-id='moreinformation'>Find out more!</a>
 		</div>
 
+		<!-- this pops out when the 'find out more' button is clicked -->
 		<div id='moreinformation' class='reveal-modal' data-reveal>
 		  <h3>This may be totally unnecessary, but is pretty cool!</h3> 
 		  <p>Aenean facilisis.Nunc erat. Integer in tellus. Mauris volutpat,
@@ -26,23 +26,26 @@
 	
 	</div>
 
-	<div class="large-4 columns">
-	  		<br>
-	  		<ul data-orbit data-options='animation:slide; pause_on_hover:true;
-					animation_speed:500; navigation_arrows:true; bullets:false;'>
-				  <li><img src='../static/img/dice.png'></li>
-				  <li><img src='../static/img/slide1.jpg'></li>
-				  <li><img src='../static/img/slide2.jpg'></li>
-				  <li><img src='../static/img/slide3.jpg'></li>
-				  <li><img src='../static/img/slide4.jpg'></li>
-			</ul>
+	<div class='large-4 columns'>
+		<img src='../static/img/dice.png'>
 	</div>
 </div>	
 
 <hr />
 
 <div class="row">
-	<div class="large-12 columns">
+	<div class="large-6 columns">
+			<br>
+			<ul data-orbit data-options='animation:slide; pause_on_hover:true;
+					animation_speed:500; navigation_arrows:true; bullets:false;'>
+				  <li><img src='../static/img/slide1.jpg'></li>
+				  <li><img src='../static/img/slide2.jpg'></li>
+				  <li><img src='../static/img/slide3.jpg'></li>
+				  <li><img src='../static/img/slide4.jpg'></li>
+			</ul>
+	</div>
+
+	<div class="large-6 columns">
 	  <h3>What is Roll For Initiative?</h3>
 	  <!--lorem-->
 	  <p>Tincidunt at, enim. Vestibulum ante ipsum primis in faucibus orci luctus et
@@ -52,12 +55,11 @@
 	  sollicitudin. Quisque nec arcu vel tellus tristique.</p>
 	  <!--/lorem-->
 	</div>
+
 </div>	  
-
-<hr />
-
+<!-- 
 <div class="row">
-	<div class='large-12 columns'>
+	<div class='large-6 columns'>
 		<ul class='large-block-grid-4'>
 			<li><img src='../static/img/slide1.jpg'></li>
 			<li><img src='../static/img/slide2.jpg'></li>
@@ -67,5 +69,6 @@
 	  
 	</div>
 </div>
+-->
 
 {% endblock %}
