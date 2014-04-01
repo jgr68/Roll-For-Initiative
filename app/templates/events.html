@@ -1,24 +1,35 @@
 <!-- new jersey engineering, yo -->
 {% extends 'base.html' %}
 {% block content %}
+<div class='row'>
+  <div class='large-8 columns'>
+
 	<h2>Upcoming Events</h2>
 	<ul>
 	{% for p in upcoming %}
-		<li class="schedule-item">
-		<h4>{{p.heading}}</h4>
-		<b>{{p.date_locale}}</b>
-		<p>{{p.body}}</p>
-		</li>
+	  <li class="schedule-item">
+	  <h4>{{p.heading}}</h4>
+	  <b>{{p.date_locale}}</b>
+	  <p>{{p.body}}</p>
+	  </li>
 	{% endfor %}
-	</ul>
+
 	<h2>Weekly Events</h2>
 	<ul>
 	{% for p in weekly %}
-		<li class="schedule-item">
-		<h4>{{p.heading}}</h4>
-		<b>{{p.date_locale}}</b>
-		<p>{{p.body}}</p>
-		</li>
+	  <li list-style-type='none' class="schedule-item">
+	  <h4>{{p.heading}}</h4>
+	  <b>{{p.date_locale}}</b>
+	  <p>{{p.body}}</p>
+	  </li>
 	{% endfor %}
 	</ul>
+	</ul>
+  </div>
+  <div class='large-4 columns'>
+  	<img src='../static/img/bike.jpg'>
+  </div>
+
+  <hr />
+</div>
 {% endblock %}
