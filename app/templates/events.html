@@ -2,34 +2,45 @@
 {% extends 'base.html' %}
 {% block content %}
 <div class='row'>
-  <div class='large-8 columns'>
+  <div class='large-12 columns'>
+	<img width='auto' src='../static/img/events-header.jpg'>
+  </div>
+</div>
 
+<hr />
+
+<div class='row'>
+  <div class='large-6 columns'>
+	<div class='panel'>
 	<h2>Upcoming Events</h2>
-	<ul>
+	<ul class='no-bullet'>
 	{% for p in upcoming %}
-	  <li class="schedule-item">
+	  <li>
 	  <h4>{{p.heading}}</h4>
 	  <b>{{p.date_locale}}</b>
 	  <p>{{p.body}}</p>
 	  </li>
 	{% endfor %}
+	</ul>
+  	</div>
+  </div>
 
+  <div class='large-6 columns'>
+
+
+	<div class='panel'>
 	<h2>Weekly Events</h2>
-	<ul>
+	<ul class='no-bullet'>
 	{% for p in weekly %}
-	  <li list-style-type='none' class="schedule-item">
+	  <li>
 	  <h4>{{p.heading}}</h4>
 	  <b>{{p.date_locale}}</b>
 	  <p>{{p.body}}</p>
 	  </li>
 	{% endfor %}
 	</ul>
-	</ul>
-  </div>
-  <div class='large-4 columns'>
-  	<img src='../static/img/bike.jpg'>
-  </div>
+  	</div>
 
-  <hr />
+  </div>
 </div>
 {% endblock %}

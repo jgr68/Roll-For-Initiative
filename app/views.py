@@ -6,64 +6,55 @@ from app import app
 @app.route('/about')
 def about():
 
-	return render_template("index.html",
-					title = 'About',
-					heading = 'About Roll for Initiative')
+	return render_template("index.html", title = 'About')
 
 @app.route('/events')
 def events():
 	upcoming = [ # fake array of posts
 		{
-			'heading': "We're going to have a meeting about meetings!",
-			'date_locale': "Monday, January 1st",
-			'body' : 'Well we see now that we are doing something very\
-						interesting with our eyes and looking for a \
-						spotted toad lodged firmly in cubical space \
-						with lemon pi. Yes we are.'
+			'heading': "Awesome New Event!",
+			'date_locale': "Monday - January 1st @ The Cove (BCC)",
+			'body' :  'Lorem ipsum dolor sit amet, consectetur adipiscing elit.\
+                                  Vivamus a magna ut est mattis mollis et in est. Praesent\
+                                  aliquam blandit lectus non blandit.'
 		},
 		{
-			'heading': "We're going frolic in a field!",
-			'date_locale': "Tuesday, April 32nd",
-			'body' : 'Well we see now that we are doing something very\
-						interesting with our eyes and looking for a \
-						spotted toad lodged firmly in cubical space \
-						with lemon pi. Yes we are.'
+			'heading': "Come join us!",
+			'date_locale': "Friday - August 9th @ Werblin (Busch Campus)",
+			'body' : 'Vivamus faucibus bibendum mi, non pretium est ultrices et.\
+                                   Donec risus mauris, laoreet eget pretium sed, cursus sed\
+                                   nunc. Morbi porta lacus ut condimentum ultricies. Nam\
+                                   ligula lorem, tempor et elit id, ullamcorper vestibulum mauris.'
 		}
 	]
 	weekly = [ # fake array of posts
 		{
-			'heading': "We're going to have a meeting about meetings!",
-			'date_locale': "Monday, January 1st",
-			'body' : 'Well we see now that we are doing something very\
-						interesting with our eyes and looking for a \
-						spotted toad lodged firmly in cubical space \
-						with lemon pi. Yes we are.'
+			'heading': "Weekly meetup!",
+			'date_locale': "Fridays 1pm-3pm @ Rutgers Student Center",
+			'body' : 'Integer eget libero vitae risus consequat consectetur.\
+                                   Nam vestibulum nunc vitae neque scelerisque porttitor.\
+                                   Cras ornare lectus enim, ut placerat justo ultricies sed.'
 		},
 		{
-			'heading': "We're going frolic in a field!",
-			'date_locale': "Tuesday, April 32nd",
-			'body' : 'Well we see now that we are doing something very\
-						interesting with our eyes and looking for a \
-						spotted toad lodged firmly in cubical space \
-						with lemon pi. Yes we are.'
+			'heading': "Business as usual!",
+			'date_locale': "Saturdays 10am-12pm @ LSC (Livingston)",
+			'body' : 'Mortiam imperdiet nibh felis, quis malesuada dui faucibus ac.\
+                                   Nunc elit magna, iaculis id mi suscipit, dignissim interdum elit.\
+                                   Aliquam erat volutpat. Maecenas dui nibh, vestibulum ut nulla at,\
+                                    aliquet tempus purus. Maecenas consequat purus vitae eleifend sollicitudin.'
 		}
 	]
 
 	return render_template("events.html",
 					title = 'Events',
-					heading = 'We socialize',
 					weekly = weekly,
 					upcoming = upcoming)
 
 @app.route('/subscribe')
 def subscribe():
-	return render_template("subscribe.html",
-					title = 'Subscribe',
-					heading = 'We haz a mailing list')
+	return render_template("subscribe.html", title = 'Subscribe')
 
 @app.route('/contact')
 def contact():
-	return render_template("index.html",
-					title = 'Contact',
-					heading = 'Contact us right nao')
+	return render_template("index.html", title = 'Contact')
 
