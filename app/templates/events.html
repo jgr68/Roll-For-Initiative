@@ -10,10 +10,35 @@
 <hr />
 
 <div class='row'>
-  <div class='large-6 columns'>
+  <div class='large-12 columns'>
 	<div class='panel'>
 	<h2>Upcoming Events</h2>
 	<ul class='no-bullet'>
+
+	<li>
+	<h4>D&D Club Monster Mash</h4>
+	<b>Friday - May 2nd from 7:00pm - 11:00pm @ <a href='http://goo.gl/maps/ArHJe'>BCC International Lounge</a></b>
+	<p>Come for free pizza and drinks as we celebrate the imminenet release of D&D Next!
+	We're hosting an awesome Pathfinder tournament where players will lead parties of
+	monsters into combat! Make sure to check out the special ruleset for the tournament
+	by clicking <a href='http://goo.gl/5Ms4uG'>here</a> and to let us know if you have
+	any questions. Hope to see you there!</p>
+	</li>
+
+	<li>
+	<h4>Elections</h4>
+	<b>Friday - May 2nd at 5:00pm @ <a href='http://goo.gl/maps/ArHJe'>BCC 174</a></b>
+	<p>Elections are coming up! The positions available are</p>
+	<ul><li>President (general plans for club, communication, helping other officers</li>	
+	<li>Treasurer (budget stuff)</li>
+	<li>Web Master (manage website, fb page, etc</li>	
+	<li>Quarter Master (keep materials and track lending)</li>
+	<li>Events Manager (book space, organize event plans)</li>
+
+	</ul>
+	<br>
+	<p>If you're interested in running for any position let us know!</p>
+	<!--
 	{% for p in upcoming %}
 	  <li>
 	  <h4>{{p.heading}}</h4>
@@ -21,15 +46,13 @@
 	  <p>{{p.body}}</p>
 	  </li>
 	{% endfor %}
+	-->
 	</ul>
   	</div>
   </div>
-
+<!--
   <div class='large-6 columns'>
-
-
-	<div class='panel'>
-	<h2>Weekly Events</h2>
+<div class='panel'> <h2>Monthly Events</h2>
 	<ul class='no-bullet'>
 	{% for p in weekly %}
 	  <li>
@@ -42,5 +65,6 @@
   	</div>
 
   </div>
+-->
 </div>
 {% endblock %}

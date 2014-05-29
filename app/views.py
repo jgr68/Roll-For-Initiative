@@ -13,11 +13,15 @@ def about():
 def events():
 	upcoming = [ # fake array of posts
 		{
-			'heading': "Awesome New Event!",
-			'date_locale': "Monday - January 1st @ The Cove (BCC)",
-			'body' :  'Lorem ipsum dolor sit amet, consectetur adipiscing elit.\
-                                  Vivamus a magna ut est mattis mollis et in est. Praesent\
-                                  aliquam blandit lectus non blandit.'
+			'heading': "D&D Club : Monster Mash",
+			'date_locale': "Friday - May 2nd @ BCC International Lounge",
+			'body' :  "Come for free pizza and drinks as we celebrate the imminent\
+				release of D&D Next! We're hosting an awesome Pathfinder\
+				 tournament where players will lead parties of monsters \
+				into combat! Make sure to check out the special ruleset for\
+				the tournament by clicking\
+				and to let us know if you have any questions."
+					
 		},
 		{
 			'heading': "Come join us!",
@@ -30,20 +34,10 @@ def events():
 	]
 	weekly = [ # fake array of posts
 		{
-			'heading': "Weekly meetup!",
-			'date_locale': "Fridays 1pm-3pm @ Rutgers Student Center",
-			'body' : 'Integer eget libero vitae risus consequat consectetur.\
-                                   Nam vestibulum nunc vitae neque scelerisque porttitor.\
-                                   Cras ornare lectus enim, ut placerat justo ultricies sed.'
-		},
-		{
-			'heading': "Business as usual!",
-			'date_locale': "Saturdays 10am-12pm @ LSC (Livingston)",
-			'body' : 'Mortiam imperdiet nibh felis, quis malesuada dui faucibus ac.\
-                                   Nunc elit magna, iaculis id mi suscipit, dignissim interdum elit.\
-                                   Aliquam erat volutpat. Maecenas dui nibh, vestibulum ut nulla at,\
-                                    aliquet tempus purus. Maecenas consequat purus vitae eleifend sollicitudin.'
-		}
+			'heading': "Monthly meetup!",
+			'date_locale': "5pm, first Friday of every month @ Busch Campus Center",
+			'body' : 'Come by to see what we have to offer, find a group to play\
+					with, and get a quick game in!'}
 	]
 
 	return render_template("events.html",
@@ -58,4 +52,3 @@ def subscribe():
 @app.route('/contact')
 def contact():
 	return render_template("index.html", title = 'Contact')
-
