@@ -1,0 +1,27 @@
+<!-- extend from base layout -->
+{% extends "base.html" %}
+
+{% block content %}
+
+<h2>Post New Event</h2>
+<form action="" method="post" name="addEvent">
+	<!-- XSS prevention -->
+	{{form.hidden_tag()}}
+	<p>
+		Title<br>		
+		{{form.title(size=40)}}<br>		
+		Time and Date<br>		
+		{{form.timeDate(size=80)}}<br>		
+		Place (description)<br>		
+		{{form.placeDesc(size=80)}}<br>		
+		Place (url)<br>		
+		{{form.placeURL(size=80)}}<br>		
+		Description<br>		
+		{{form.description(size=80)}}<br>		
+	</p>
+	<p>	
+		<input type='submit' value='Submit'>
+	</p>	
+				
+</form>
+{% endblock %}

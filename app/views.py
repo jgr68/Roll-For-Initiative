@@ -1,7 +1,12 @@
+# external
 import sys, os
-from flask import render_template
+from flask import render_template, request
 from app import app
 
+#internal
+from form import EventForm
+
+# ----------------------------------------------------------
 @app.route('/')
 @app.route('/index')
 @app.route('/about')
@@ -9,6 +14,16 @@ def about():
 
 	return render_template("index.html", title = 'About')
 
+
+@app.route('/admin')
+def admin():
+
+	form = EventForm()
+	return render_template('admin.html',\
+						title = 'Admin',\
+						form = form)
+					
+			
 @app.route('/events')
 def events():
 	upcoming = [ # fake array of posts
