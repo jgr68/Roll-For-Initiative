@@ -1,5 +1,5 @@
 from flask.ext.wtf import Form
-from wtforms import TextField, TextAreaField
+from wtforms import TextField, TextAreaField, BooleanField
 from wtforms.validators import Required
 class EventForm(Form):
 
@@ -15,4 +15,9 @@ class EventForm(Form):
 						validators = [Required()])
 
 	
+class LoginForm(Form):
+
+	
+	openid = TextField('openid', validators = [Required()])
+	remember_me = BooleanField('remember_me', default = False)
 

@@ -17,7 +17,7 @@ DEFAULT_ROLE = 'member'
 
 SECURE = False # dev mode
 
-def db_connect():
+def db_connect(host, user, passwd, db):
 
 	# connect to the msyql database
 	db = MySQLdb.connect(host = HOST,\
