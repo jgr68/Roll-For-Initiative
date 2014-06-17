@@ -41,6 +41,9 @@
 				<li><a href='subscribe'>Subscribe</a></li>
 				<li><a href='mailto:rutgersdnd@gmail.com'>Contact</a></li>
 				<li><a href='events'>Events</a></li>
+				{% if g.user.is_authenticated() %}
+					<li><a href='logout'>Logout</a></li>
+				{% endif %}
 
 			</ul>
 		</section>
@@ -54,8 +57,8 @@
 	{% endfor %}
 	</ul>
 	{% endif %}
-	{% endwith %}
 
+	{% endwith %}
 	{% block content %}
 	{% endblock %}
 
