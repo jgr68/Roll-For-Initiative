@@ -4,7 +4,7 @@ from flask import flash, redirect, render_template, request, session, url_for, g
 from flask.ext.login import login_user, logout_user, current_user, login_required
 from app import app, db, lm, oid
 from forms import EventForm, LoginForm
-from models import User
+from models import User, ROLE_ADMIN
 from events import add_event, get_events
 
 
@@ -41,28 +41,23 @@ def login():
 
 @oid.after_login
 def after_login(resp):
-	print '1'
 	if resp.email is None or resp.email == "":
 		print 
 		flash('Invalid login. Please try again.')
 		return redirect(url_for('login'))
-	print '2' 
 	user = User.query.filter_by(email = resp.email).first()
-	print '3' 
 	if user is None:
-		print 
+		#user = User(email=resp.email, role=ROLE_ADMIN)
+		#db.session.add(user)
+		#db.session.commit()
 		flash('Maybe you should listen to Gandalf.')
 		return redirect(url_for('login'))
-	print '4' 
 	remember_me = False
-	print '5' 
 	if 'remember_me' in session:
 		print 
 		remember_me = session['remember_me']
 		session.pop('remember_me', None)
-	print '6' 
 	login_user(user, remember = remember_me)
-	print '7' 
 	return redirect(url_for('admin'))
 
 @app.route('/admin', methods = ['GET', 'POST'])
