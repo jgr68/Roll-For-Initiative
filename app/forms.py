@@ -3,15 +3,24 @@ from wtforms import TextField, TextAreaField, BooleanField
 from wtforms.validators import Required
 class EventForm(Form):
 
-	# create the fields for the form
 	title = TextField('title', validators = [Required()])
-	timeDate = TextField('timeDate',\
+	dateStart = TextField('dateStart',
+					id='datepicker',
+					validators = [Required()])
+	timeStart = TextField('timeStart',
+					id='datepicker',
+					validators = [Required()])
+	dateEnd = TextField('dateEnd',
+					id='datepicker',
+					validators = [Required()])
+	timeEnd = TextField('timeEnd',
+					id='datepicker',
+					validators = [Required()])
+	location = TextField('location',\
 						validators = [Required()])
-	placeDesc = TextField('placeDesc',\
+	mapsURL = TextField('mapsURL',\
 						validators = [Required()])
-	placeURL = TextField('placeURL',\
-						validators = [Required()])
-	description = TextField('description',\
+	body = TextField('body',\
 						validators = [Required()])
 
 	

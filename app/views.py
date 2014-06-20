@@ -6,7 +6,7 @@ from app import app, db, lm, oid
 from forms import EventForm, LoginForm
 from models import User, ROLE_ADMIN
 from events import add_event, get_events
-
+from tellinTime import make_datetime
 
 @lm.user_loader
 def load_user(id):
@@ -64,7 +64,28 @@ def after_login(resp):
 @login_required
 def admin():
 
-	return render_template('admin.html')
+	form = EventForm()
+	if request.method == 'POST':
+		title = form.title.data
+		start_datetime = make_datetime(date=form.dateStart.data,
+									time=form.timeStart.data)
+		end_datetime = make_datetime(date=form.dateEnd.data,
+									time=form.timeEnd.data)
+		location = form.location.data
+		mapsURL = form.mapsURL.data
+		body = form.body.data
+
+		print 'title: ',title
+		print 'start_datetimei: ',start_datetime
+		print 'end_datetime: ',end_datetime	
+		print 'location: ',location
+		print 'mapsURL: ',mapsURL
+		print 'body: ',body
+
+	return render_template('admin.html',
+						title = 'Admin',
+						form = form)
+
 
 					
 			

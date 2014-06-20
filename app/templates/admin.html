@@ -1,11 +1,31 @@
-<!-- you fucked this up lololol... go on git and copy and paste the old
-     old admin code into this thang to fix your mistake :)
--->
-
 <!-- extend from base layout -->
 {% extends "base.html" %}
 
 {% block content %}
 
-<h2>Oh shit! You're logged in!</h2>
+<h4>Welcome, administrator!</h4>
+
+<form action="" method="post" name="login">
+	<!-- XSS prevention -->
+	{{form.hidden_tag()}}
+	<p>
+		Title: {{form.title}} <br>
+		Starts: {{form.dateStart}}	
+		{{form.timeStart}}	
+		Ends: {{form.dateEnd}}
+		{{form.timeEnd}}
+		Location: {{form.location}} <br>
+		Google Maps URL: {{form.mapsURL}} <br>
+		Body (Markup friendly): {{form.body}} <br>
+	</p>
+	<p>
+		<input type='submit' value='Submit' />
+	</p>
+</form>
+	<script type="text/javascript">
+		$(document).ready(function() {
+			$( "#datepicker" ).datepicker();
+		});
+	</script>
+
 {% endblock %}
