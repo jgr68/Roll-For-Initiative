@@ -32,8 +32,8 @@ class Event(db.Model):
 
     id = db.Column(db.Integer, primary_key = True)
     title = db.Column(db.String(300))
-    start_timedate = db.Column(db.DateTime)
-    end_timedate = db.Column(db.DateTime)
+    start_datetime = db.Column(db.Integer)
+    end_datetime = db.Column(db.Integer)
     location = db.Column(db.String(200))
     mapsURL = db.Column(db.String(50))
     body = db.Column(db.String(500))

@@ -4,7 +4,7 @@ from flask import flash, redirect, render_template, request, session, url_for, g
 from flask.ext.login import login_user, logout_user, current_user, login_required
 from app import app, db, lm, oid
 from forms import EventForm, LoginForm
-from models import User, ROLE_ADMIN
+from models import Event, User, ROLE_ADMIN
 from events import add_event, get_events
 from tellinTime import make_datetime, make_timestamp
 
@@ -83,6 +83,15 @@ def admin():
 		print 'location: ',location
 		print 'mapsURL: ',mapsURL
 		print 'body: ',body
+
+		event = Event(title = title,
+					start_datetime = make_timestamp(start_datetime),
+					end_datetime = make_timestamp(end_datetime),
+					location = location,
+					mapsURL = mapsURL,
+					body = body)
+		db.session.add(event)
+		db.session.commit()	
 
 	return render_template('admin.html',
 						title = 'Admin',
