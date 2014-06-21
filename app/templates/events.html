@@ -15,12 +15,12 @@
 	<h2>Upcoming Events</h2>
 
 	<ul class='no-bullet'>
-	{% for event in eventList %}
+	{% for e in events %}
 		<div class='panel'>
 		<li>
-			<h4>{{event['title']}}</h4>
-			<b>{{event['timeDate']}} @ <a href='{{event['placeURL']}}'>{{event['placeDesc']}}</a></b>
-			<p>{{event['description']}}</p>
+			<h4>{{e['title']}}</h4>
+			<b>{{e['starts']}} @ <a href='{{e['mapsURL']}}'>{{e['location']}}</a></b><br>
+			{{e['body']}}
 		</li>
   		</div>
 	{% endfor %}
