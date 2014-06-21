@@ -17,3 +17,8 @@ def make_timestamp(dt):
 	epoch = local_epoch.astimezone(utc)
 	td = dt - epoch
 	return (td.microseconds + (td.seconds + td.days * 24 * 3600) * 10**6) / 1e6
+
+def unix2human(timestamp):
+
+	value = datetime.fromtimestamp(timestamp)
+	return value.strftime('%b %d %Y - %H:%M%P')

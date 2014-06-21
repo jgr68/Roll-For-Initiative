@@ -5,8 +5,9 @@ from flask.ext.login import login_user, logout_user, current_user, login_require
 from app import app, db, lm, oid
 from forms import EventForm, LoginForm
 from models import Event, User, ROLE_ADMIN
-from events import add_event, get_events
-from tellinTime import make_datetime, make_timestamp
+from tellinTime import make_datetime, make_timestamp, unix2human
+from sqlalchemy import asc
+from markupsafe import Markup
 
 @lm.user_loader
 def load_user(id):
@@ -103,11 +104,24 @@ def admin():
 @app.route('/events')
 def events():
 
-	eventList = get_events()	
+	result = Event.query.order_by(asc(Event.start_datetime)).all()[0:10]
+	events = []
+	for r in result:
+		
+		e = {'title' : str(r.title),
+			'starts' : str(unix2human(r.start_datetime)),
+			'ends' : str(unix2human(r.end_datetime)),
+			'location' : str(r.location),
+			'mapsURL' : str(r.mapsURL),
+			'body' : Markup(r.body)}
+		events.append(e)
+
+	for e in events:
+		print e['title']
 
 	return render_template("events.html",
 					title = 'Events',
-					eventList = eventList)
+					events = events)
 
 @app.route('/subscribe')
 def subscribe():
